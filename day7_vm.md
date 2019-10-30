@@ -33,8 +33,18 @@
 ## Virtual Machine Sizing
 - Gợi ý Sizing như hình dưới
 <img src="https://imgur.com/P4GlfLl.jpg">
+
 ## Virtual Machine Disks
+- OS Disk: SATA drives, labeled as Checklist
+- Ổ đĩa tạm, mất đi sau khi reboot
+- Data Disks chuẩn SCSI drivers and depend on your virtual machine type
 
 ## Storage Options
+- Premium disks: SSD, hiệu suất cao, độ trễ thấp, giá cao
+- Sử dụng premium cho máy ảo cần có Workloads I/O lớn
+- 2 Loại Disks: Unmanaged and Managed
+	- Unmanaged disks (Azure không cam kết backup)
+	- Managed disks (đã được Azure backup)
 
 ## Support Operating Systems
+- không hỗ trợ upgrade OS

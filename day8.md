@@ -1,40 +1,31 @@
-# Virtual Machine Planning
-## IaaS cloud serivce
-- Test and development
-- Website hosting
-- Storage, backup, and recovery
-- Web apps
-- High-performance computing
-- Big data analysis
+# Maintenance vs. Downtime
 
-## Planning Checklist
-- Start with the network
-- Name the VM
-- Decide the location for the VM
-- Determine the size of the VM
-- Understand the pricing model
-- Consider storage for the VM
-- Select an operating system
-## Location and Pricing
-### Location
-- Có 54 regions trên 140 quốc gia
-- Đặt vm gần nhất có thể cho users
-- Khả năng cung ứng phần cứng ở mỗi regions lại khác biệt (size của VM)
-- Giá của Vm chưa bao gồm ổ cứng của hệ điều hành
-- Tính phí hệ điều hành cả khi không dùng máy
-- Vị trí máy ảo phải phù hợp với pháp lý hoặc chính sách 
-### Pricing
-- Sử dụng trang azure calculator để lên dự toán
-- managed disk tính theo lưu lượng sử dụng (standard tính theo lượng thực tế dùn, tính theo toàn bộ phana vùng)g)
-- Static Ip 1 giá, Dynamic Ip 1 giá (giá khác nhau mỗi vùng, giá có thay đổi liên tục)
-- Outbound Data transfer tính theo dung lượng GB có giá khác nhau
-- Có license ở on-prem thì giảm đc 40% giá license
+- Unplanned hardware maintenance -> Action: Live migration
+- Unexpected Downtime
+- Plan maintenance
 
-## Virtual Machine Sizing
-- Gợi ý Sizing như hình dưới
-<img src="https://imgur.com/P4GlfLl.jpg">
-## Virtual Machine Disks
+# Availability Sets
+- Nhiều hơn 2 instance in two or more availibility zones = 99.99% uptime
+- Có thể tạo nhiều máy ảo trong availibility set
+- có thể tạo app theo từng availibility set
+- Update domains: (giống tủ rack) Tên miền cho phép gia tăng, triển khai, có thể phải khởi động lại
+- Fault domain: là 1 nhóm máy ảo nằm trên nhiều máy chủ vật lý khác nhau. Ít nhất trong 1 availibilityset sẽ có 2 fault domain
 
-## Storage Options
+# Scale Sets
+## Implementing scale sets
+- chọn đc số máy ảo có thể scale lên 100 
+- Insance size
+## Autoscal
+- Tự động điều chỉnh
+- Scale out 
+- Scale in
+- lên lịch được sự kiện tăng giảm
+- Giám sát được 
+## Implementing autoscale
+- dựa trên CPU rồi tăng số lượng VM theo tùy chỉnh
 
-## Support Operating Systems
+## Virtual Machine Extensions
+
+## Customer Script Extensions
+
+##
